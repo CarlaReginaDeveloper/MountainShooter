@@ -138,7 +138,7 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 SPAWN_TIME = 3000
 
 #T
-TIMEOUT_LEVEL = 10000 #20s
+TIMEOUT_LEVEL = 10000 #10s
 TIMEOUT_STEP = 100 #100ms
 
 # W
@@ -162,3 +162,4 @@ SCORE_POS = {
     8: (WIN_WIDTH / 2, 270),
     9: (WIN_WIDTH / 2, 290),
     }
+
