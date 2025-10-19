@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from my_code.background import Background
-from my_code.const import WIN_WIDTH
+from my_code.const import WIN_WIDTH, WIN_HEIGHT
+from my_code.player import Player
 
 class EntityFactory:
     @staticmethod
@@ -13,4 +14,8 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1Bg{i}', (0,0)))
                     list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH,0)))
                 return list_bg
+            case 'Player1':
+                return Player('Player1', (10, WIN_HEIGHT / 2 - 30))
+            case 'Player2':
+                return Player('Player2', (10, WIN_HEIGHT / 2 + 30))
 

@@ -7,17 +7,21 @@ from pygame import Surface, Rect
 from pygame.font import Font
 from my_code.entity import Entity
 from my_code.entityFactory import EntityFactory
-from my_code.const import F_NAME, F_SIZE3, C_WHITE, WIN_HEIGHT
+from my_code.const import F_NAME, F_SIZE3, C_WHITE, WIN_HEIGHT, MENU_OPTION
 
 class Level:
     def __init__(self, window, name, game_mode):
-        # self.timeout = None
+        
         self.window = window
         self.name = name
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
         self.timeout = 20000 # 20s
+
+        if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
+            self.entity_list.append(EntityFactory.get_entity('Player2'))
 
     def run(self):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
