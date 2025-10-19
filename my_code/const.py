@@ -14,6 +14,12 @@ ENTITY_SPEED = {
     'Level1Bg6': 6,
 }
 
+# F
+F_NAME = 'Lucida Sans Typewriter'
+F_SIZE1 = 50
+F_SIZE2 = 20
+F_SIZE3 = 14
+
 # M
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',
