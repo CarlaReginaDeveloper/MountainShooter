@@ -10,6 +10,8 @@ from my_code.entity import Entity
 from my_code.entityFactory import EntityFactory
 from my_code.entityMediator import EntityMediator
 from my_code.const import F_NAME, F_SIZE3, C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
+from my_code.player import Player
+from my_code.enemy import Enemy
 
 class Level:
     def __init__(self, window, name, game_mode):
@@ -36,6 +38,11 @@ class Level:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
