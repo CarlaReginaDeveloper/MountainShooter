@@ -17,9 +17,9 @@ ENTITY_DAMAGE = {
     'Level1Bg4': 0,
     'Level1Bg5': 0,
     'Level1Bg6': 0,
-    'Leve21Bg0': 0,
-    'Leve21Bg0': 0,
-    'Leve21Bg2': 0,
+    'Level2Bg0': 0,
+    'Level2Bg1': 0,
+    'Level2Bg2': 0,
     'Level2Bg3': 0,
     'Level2Bg4': 0,
     'Player1': 2,
@@ -39,9 +39,9 @@ ENTITY_HEALTH = {
     'Level1Bg4': 999,
     'Level1Bg5': 999,
     'Level1Bg6': 999,
-    'Leve21Bg0': 999,
-    'Leve21Bg0': 999,
-    'Leve21Bg2': 999,
+    'Level2Bg0': 999,
+    'Level2Bg1': 999,
+    'Level2Bg2': 999,
     'Level2Bg3': 999,
     'Level2Bg4': 999,
     'Player1': 300,
@@ -61,9 +61,9 @@ ENTITY_SCORE = {
     'Level1Bg4': 0,
     'Level1Bg5': 0,
     'Level1Bg6': 0,
-    'Leve21Bg0': 0,
-    'Leve21Bg0': 0,
-    'Leve21Bg2': 0,
+    'Level2Bg0': 0,
+    'Level2Bg1': 0,
+    'Level2Bg2': 0,
     'Level2Bg3': 0,
     'Level2Bg4': 0,
     'Player1': 0,
@@ -77,10 +77,10 @@ ENTITY_SCORE = {
 }
 
 ENTITY_SHOT_DELAY = {
-    'Player1': 20,
-    'Player2': 22,
-    'Enemy1': 70,
-    'Enemy2': 80,
+    'Player1': 30,
+    'Player2': 32,
+    'Enemy1': 60,
+    'Enemy2': 70,
     
 }
 
@@ -92,6 +92,11 @@ ENTITY_SPEED = {
     'Level1Bg4': 5,
     'Level1Bg5': 6,
     'Level1Bg6': 6,
+    'Level2Bg0': 0,
+    'Level2Bg1': 1,
+    'Level2Bg2': 2,
+    'Level2Bg3': 3,
+    'Level2Bg4': 3,
     'Player1': 3,
     'Player1Shot': 1,
     'Player2': 3,
@@ -102,6 +107,7 @@ ENTITY_SPEED = {
     'Enemy2Shot': 5,
 }
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_TIMEOUT = pygame.USEREVENT + 2
 
 # F
 F_NAME = 'Lucida Sans Typewriter'
@@ -129,7 +135,11 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
                  'Player2': pygame.K_LCTRL}
 
 # S
-SPAWN_TIME = 4000
+SPAWN_TIME = 3000
+
+#T
+TIMEOUT_LEVEL = 20000 #20s
+TIMEOUT_STEP = 100 #100ms
 
 # W
 WIN_WIDTH = 576
