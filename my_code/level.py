@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 import sys
 import pygame
+import random
 
 from pygame import Surface, Rect
 from pygame.font import Font
 from my_code.entity import Entity
 from my_code.entityFactory import EntityFactory
-from my_code.const import F_NAME, F_SIZE3, C_WHITE, WIN_HEIGHT, MENU_OPTION
+from my_code.const import F_NAME, F_SIZE3, C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
 
 class Level:
     def __init__(self, window, name, game_mode):
@@ -23,6 +24,8 @@ class Level:
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
 
+        pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)
+
     def run(self):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
         pygame.mixer_music.play(-1)
@@ -36,6 +39,9 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    choice = random.choice(('Enemy1', 'Enemy2'))
+                    self.entity_list.append(EntityFactory.get_entity(choice))
 
             # printed text
             self.level_text(F_SIZE3, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))

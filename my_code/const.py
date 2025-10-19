@@ -1,5 +1,6 @@
 import pygame
 
+
 # C
 C_ORANGE = (255, 128, 0)
 C_WHITE = (255, 255, 255)
@@ -16,7 +17,10 @@ ENTITY_SPEED = {
     'Level1Bg6': 6,
     'Player1': 3,
     'Player2': 3,
+    'Enemy1': 2,
+    'Enemy2': 1,
 }
+EVENT_ENEMY = pygame.USEREVENT + 1
 
 # F
 F_NAME = 'Lucida Sans Typewriter'
@@ -42,6 +46,9 @@ PLAYER_KEY_RIGTH = {'Player1': pygame.K_RIGHT,
                  'Player2': pygame.K_d}
 PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
                  'Player2': pygame.K_LCTRL}
+
+# S
+SPAWN_TIME = 4000
 
 # W
 WIN_WIDTH = 576
